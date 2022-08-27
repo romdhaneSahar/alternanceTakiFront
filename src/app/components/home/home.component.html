@@ -1,0 +1,211 @@
+<!--navbar-->
+<nav class="navbar">
+    <div class="col-md-12">
+        <ul class="navbar-nav">
+            <div class="row">
+
+
+                <div class="col-md-10">
+                    <div class="row">
+                        <div class="col-md-2 alignLogo">
+                            <mat-icon svgIcon="logo" class="logo"></mat-icon>
+                        </div>
+
+
+                        <div class="col-md-7">
+                            <li class="nav-item searchbar">
+                                <input type="text" class="form-control" placeholder="Search" name="search">
+                            </li>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-2 search">
+                    <div class="row search ">
+
+                        <div class="col-md-2">
+                            <button type="button" class="btn ">
+                                <mat-icon>settings</mat-icon>
+                            </button>
+                        </div>
+
+                        <div class="col-md-2">
+                            <button type="button" class="btn ">
+                                <mat-icon>notifications</mat-icon>
+                            </button>
+                        </div>
+
+                        <div class="col-md-2">
+                            <h4 class="name">Achref</h4>
+                        </div>
+
+                        <div class="col-md-2">
+                            <img class="avatar mat-elevation-z8"
+                                src="https://source.unsplash.com/c_GmwfHBDzk/200x200" />
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </ul>
+    </div>
+
+</nav>
+
+<!--/navbar-->
+
+<!--sidebar-->
+<mat-sidenav-container style="background-color: white;">
+    <mat-sidenav mode="side" opened>
+
+        <button type="button" (click)="fileInput.click()" class="upload">
+            <mat-icon>upload</mat-icon>
+            <span>Upload</span>
+            <input #fileInput type="file" style="display:none;" />
+        </button>
+
+        <button mat-button class="menu-button" routerLink="/home">
+            <mat-icon>home</mat-icon>
+            <span>Home</span>
+        </button>
+        <button mat-button class="menu-button" routerLink="/allFiles">
+            <mat-icon svgIcon="FileStructure"></mat-icon>
+            <span>All Files</span>
+        </button>
+        <button mat-button class="menu-button" routerLink="/starred">
+            <mat-icon>star</mat-icon>
+            <span>Starred</span>
+        </button>
+
+        <button mat-button class="menu-button" routerLink="/archieved">
+            <mat-icon>archive</mat-icon>
+            <span>Archived</span>
+        </button>
+
+    </mat-sidenav>
+
+    <mat-sidenav-content class="drawerContent">
+        <div class="cards">
+            <div class="content mat-elevation-z8">
+
+
+                <div class="col-md-4">
+                    <mat-card class="alignCard">
+                        <mat-card-header>
+                            <button class="docs">
+                                <mat-icon>folder</mat-icon>
+                            </button>
+                        </mat-card-header>
+
+
+                        <mat-card-content class="docsText">
+                            Documents
+                        </mat-card-content>
+                        <mat-card-actions>
+                        </mat-card-actions>
+
+                    </mat-card>
+                </div>
+
+
+                <div class="col-md-4">
+                    <mat-card class="alignCard">
+                        <mat-card-header>
+                            <button class="img">
+                                <mat-icon>image</mat-icon>
+                            </button>
+                        </mat-card-header>
+
+
+                        <mat-card-content class="docsText">
+                            Images
+                        </mat-card-content>
+                        <mat-card-actions>
+                        </mat-card-actions>
+
+                    </mat-card>
+                </div>
+
+
+                <div class="col-md-4">
+                    <mat-card class="alignCard">
+                        <mat-card-header>
+                            <button class="video">
+                                <mat-icon>theaters</mat-icon>
+                            </button>
+                        </mat-card-header>
+
+
+                        <mat-card-content class="docsText">
+                            Video
+                        </mat-card-content>
+                        <mat-card-actions>
+                        </mat-card-actions>
+
+                    </mat-card>
+                </div>
+
+
+
+            </div>
+
+        </div>
+        <div class="recent">
+            <h1>Recent Files</h1>
+        </div>
+        <!--table-->
+
+
+        <div class="col-md-8 table">
+            <div class="card-body">
+
+                <div class="row">
+                    <table class="table table-responsive-sm  table-outline mb-0">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>Name</th>
+                                <th>Date created</th>
+                                <th>size</th>
+
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    file1
+                                <td>
+                                    april,4,2021
+                                </td>
+                                <td>
+                                    24kb
+                                </td>
+
+
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </mat-sidenav-content>
+
+</mat-sidenav-container>
+<!--/sidebar-->
+
+
+
+
+
+<!--upload test test
+<button type="button" (click)="fileInput.click()" class="upload">
+    <mat-icon>upload</mat-icon>
+    <span>Upload</span>
+    <input #fileInput type="file"  style="display:none;" (change)="onFileSelected($event)" />
+  </button>
+  -->
+<router-outlet></router-outlet>
